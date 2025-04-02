@@ -1,0 +1,32 @@
+name: Publish to GitHub Packages
+
+on:
+  push:
+    branches:
+      - main  # Change this if you use a different branch
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          server-id: github
+          settings-path: ${{ github.workspace }}
+
+      - name: Configure Maven for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings><servers><server><id>github</id><username>${{ github.actor }}</username><password>${{ secrets.GH_PAT }}</password></server></servers></settings>" > ~/.m2/settings.xml
+
+      - name: Publish package
+        run: mvn deploy -DskipTests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # Use the PAT
