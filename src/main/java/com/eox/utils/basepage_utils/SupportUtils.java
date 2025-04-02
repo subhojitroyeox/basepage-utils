@@ -1,4 +1,4 @@
-package com.eox.utils;
+package com.eox.utils.basepage_utils;
 
 import java.io.File;
 import java.io.FileInputStream;
