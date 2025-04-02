@@ -21,7 +21,7 @@ public class BasePage {
 	}
 	
 	// Click method with explicit wait
-    protected void elementClick(WebElement element) {
+    public void elementClick(WebElement element) {
     	wait.until(ExpectedConditions.elementToBeClickable(element));
         SupportUtils.safeClick(element,driver,3);
     } 
