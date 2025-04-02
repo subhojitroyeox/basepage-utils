@@ -6,7 +6,7 @@
 
   <groupId>com.eox.utils</groupId>
   <artifactId>basepage-utils</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.3-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>basepage-utils</name>
@@ -20,17 +20,10 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.7.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-params</artifactId>
-      <version>5.7.1</version>
-      <scope>test</scope>
-    </dependency>
+  <groupId>com.eox.utils</groupId>
+  <artifactId>automation-utils</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
+</dependency>
   </dependencies>
 
   <build>
@@ -54,4 +47,17 @@
       <url>https://maven.pkg.github.com/subhojitroyeox/basepage-utils</url>
     </repository>
   </distributionManagement>
+  
+  <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/subhojitroyeox/automation-utils</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
