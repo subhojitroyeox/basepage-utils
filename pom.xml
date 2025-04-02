@@ -48,11 +48,17 @@
     </plugins>
   </build>
   
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/subhojitroyeox/automation-utils</url>
+    </repository>
+  </distributionManagement>
   <!-- Repositories section to fetch the utils packages from  https://github.com/subhojitroyeox/automation-utils-->
     <repositories>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/subhojitroyeox/basepage-utils</url>
+            <url>https://maven.pkg.github.com/subhojitroyeox/automation-utils</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
